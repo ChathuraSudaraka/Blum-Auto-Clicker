@@ -47,7 +47,7 @@ The script includes various configurable settings:
 
 1. Install a userscript manager (like Violentmonkey)
 2. Click the install link or copy the script to your userscript manager
-3. Navigate to https://telegram.blum.codes/
+3. Navigate to https://t.me/blum/app?startapp=ref_zWGZzIPrht
 4. The script will automatically start running
 
 ## Usage
@@ -56,12 +56,6 @@ The script includes various configurable settings:
 2. Adjust the settings according to your preferences
 3. Use the Pause/Resume button to control the auto-clicker
 4. Settings are automatically saved for future sessions
-
-## Contact & Support
-
-- GitHub: [mudachyo/Blum](https://github.com/mudachyo/Blum)
-- Telegram: [@shopalenka](https://t.me/shopalenka)
-- Donations: [Support the developer](https://mudachyo.codes/donate/)
 
 ## Version
 
