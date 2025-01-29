@@ -442,7 +442,7 @@ try {
     }, getClickDelay());
   }
 
-  // Функция проверки обновлений скрипта
+  // Script update check function
   async function checkForUpdates() {
     if (!GAME_SETTINGS.checkForUpdates) {
       console.log("Checking for updates is disabled.");
@@ -478,7 +478,7 @@ try {
     }
   }
 
-  // Сравнение версий
+  // Version comparison function
   function compareVersions(v1, v2) {
     const v1Parts = v1.split(".").map(Number);
     const v2Parts = v2.split(".").map(Number);
@@ -494,14 +494,14 @@ try {
 
   checkForUpdates();
 
-  // Функция для расчета задержки между кликами
+  // Function to calculate delay between clicks
   function getClickDelay() {
     const minDelay = GAME_SETTINGS.minDelayMs || 500;
     const maxDelay = GAME_SETTINGS.maxDelayMs || 1000;
     return Math.random() * (maxDelay - minDelay) + minDelay;
   }
 
-  // Функция проверки завершилась ли игра
+  // Function to check if game is completed
   function checkGameCompletion() {
     const rewardElement = document.querySelector(
       "#app > div > div > div.content > div.reward"
@@ -512,7 +512,7 @@ try {
     }
   }
 
-  // Функция для сброса статистики после завершения игры
+  // Function to reset game statistics after game completion
   function resetGameStats() {
     gameStats = {
       score: 0,
@@ -532,7 +532,7 @@ try {
     );
   }
 
-  // Функция AutoPlay
+  // AutoPlay function
   function checkAndClickPlayButton() {
     const playButtons = document.querySelectorAll(
       "button.kit-button.is-large.is-primary, button.kit-pill.reset.is-type-white.pill"
@@ -553,7 +553,7 @@ try {
     });
   }
 
-  // Функция обновления страницы в случае ошибки
+  // Function to refresh page in case of error
   function checkAndClickResetButton() {
     const errorPage = document.querySelector(
       "div[data-v-26af7de6].error.page.wrapper"
