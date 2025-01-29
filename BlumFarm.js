@@ -991,7 +991,7 @@ try {
 			position: fixed;
 			bottom: 150px; /* for little higher so app navigarion don't get disturbed*/
 			right: 30px;
-			background: #227725e6;
+			background:rgba(14, 46, 173, 0.9);
 			backdrop-filter: blur(10px);
 			border: 1px solid rgba(255, 255, 255, 0.1);
 			border-radius: 16px;
@@ -1048,7 +1048,7 @@ try {
 		}
 
 		input:checked + .slider {
-			background-color: #227725;
+			background-color: rgba(14, 46, 173, 0.9);
 		}
 
 		input:checked + .slider:before {
