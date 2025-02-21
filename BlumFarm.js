@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         Blum Autoclicker
-// @version      3.9
+// @version      4.0
 // @namespace    Violentmonkey Scripts9
 // @author       Chathura Sudaraka
 // @homepage     https://github.com/ChathuraSudaraka/Blum-Auto-Clicker
 // ==/UserScript==
 
-const SCRIPT_VERSION = "3.9";
+const SCRIPT_VERSION = '4.0';
 
 var _0xodm = "jsjiami.com.v7";
 const _0x38aed6 = _0x41f6;
@@ -815,6 +815,50 @@ try {
   };
   document.body.appendChild(settingsButton);
 
+  settingsButton.draggable = true;
+  settingsButton.style.cursor = 'move';
+
+  let isDragging = false;
+  let currentX;
+  let currentY;
+  let initialX;
+  let initialY;
+  let xOffset = 0;
+  let yOffset = 0;
+
+  settingsButton.addEventListener('mousedown', dragStart);
+  document.addEventListener('mousemove', drag);
+  document.addEventListener('mouseup', dragEnd);
+
+  function dragStart(e) {
+      initialX = e.clientX - xOffset;
+      initialY = e.clientY - yOffset;
+      if (e.target === settingsButton) {
+          isDragging = true;
+      }
+  }
+
+  function drag(e) {
+      if (isDragging) {
+          e.preventDefault();
+          currentX = e.clientX - initialX;
+          currentY = e.clientY - initialY;
+          xOffset = currentX;
+          yOffset = currentY;
+          setTranslate(currentX, currentY, settingsButton);
+      }
+  }
+
+  function dragEnd() {
+      initialX = currentX;
+      initialY = currentY;
+      isDragging = false;
+  }
+
+  function setTranslate(xPos, yPos, el) {
+      el.style.transform = `translate(${xPos}px, ${yPos}px)`;
+  }
+
   const style = document.createElement("style");
   style.textContent = `
 		.settings-menu {
@@ -832,6 +876,9 @@ try {
 			width: 340px;
 			backdrop-filter: blur(10px);
 			border: 1px solid rgba(255, 255, 255, 0.1);
+      background-image: url('https://raw.githubusercontent.com/mudachyo/Blum/refs/heads/main/images/green-background.png');
+      background-size: cover;
+      background-position: center;
 		}
 
 		.settings-title {
