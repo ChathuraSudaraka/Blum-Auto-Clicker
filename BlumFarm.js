@@ -243,7 +243,7 @@ let GAME_SETTINGS = {
   maxDelayMs: 999,
   autoClickPlay: false,
   dogsProbability: (98 + Math.random()) / 100,
-  checkForUpdates: true,
+  checkForUpdates: false,
   autoVideoTask: true,
   autoVerifyCode: false,
   autoClaimTask: true,
